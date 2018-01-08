@@ -3,6 +3,8 @@ import { StyleSheet, Text, View, Button } from 'react-native';
 import { DrawerNavigator, StackNavigator } from 'react-navigation';
 import Index from './Screens/Index';
 import Page from './Screens/Page';
+import CardModal from './Screens/CardModal';
+import Drawer from './Components/Drawer';
 
 
 const App = StackNavigator({
@@ -18,14 +20,28 @@ const App = StackNavigator({
             <Button title="Index" onPress={() => navigation.navigate('DrawerOpen')} />,
         headerBackTitle: null,
     })
-})
+});
+
+const ModalNav = StackNavigator({
+    MainCardNavigator: { screen: App },
+    CardModal: {
+        screen: CardModal,
+    }
+}, {
+    mode: 'modal',
+    headerMode: 'none',
+    cardStyle: {
+        backgroundColor: 'transparent',
+    },
+});
 
 const MyApp = DrawerNavigator({
-    App: {
-        screen: App,
+    ModalNav: {
+        screen: ModalNav,
     },
 }, {
     drawerPosition: 'right',
+    contentComponent: Drawer,
 });
 
 export default MyApp;

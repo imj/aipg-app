@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, ScrollView, View } from 'react-native';
+import { StyleSheet, Text, ScrollView, TouchableOpacity, View } from 'react-native';
+import CardLink from '../Components/CardLink';
 
 
 const RULES = {
@@ -37,6 +38,16 @@ export default class Page extends Component {
                     {"\n\n"}
                     If fixing the game state has taken more than one minute, give a time extension equal to the time taken, unless the match is in extra turns. You did look at the clock before walking up to the table, right?
                 </Annotation>
+
+                <P>Warnings are used in situations of incorrect play when a small amount of time is needed to implement the corrective procedure. The purpose of a Warning is to alert judges and players involved that a problem has occurred and to keep a permanent record of the infraction in the DCI Penalty Database. A time extension should be issued if the ruling has taken more than a minute.</P>
+
+                <Annotation>
+                    These are triggered abilities that first matter at resolution. In order to avoid missing these triggers, the controller of these abilities must remember to make the choice or take the visible action when the trigger would resolve (or prompt the opponent to do so). The player may also avoid missing the trigger by making it clear to the opponent what outcome will be taken when the trigger resolves. Saying ‘Trigger’ is not sufficient. You need to clearly indicate what the specific trigger is.
+                    {"\n\n"}
+                    <Strong>Examples</Strong>: <CardLink card="Ainok Guide" />, <CardLink card="Burning Earth" />, <CardLink card="Abzan Skycaptain" />
+                    {"\n\n"}
+                    As it turns out, this is by far the most common type of triggered ability in the game. Most triggered abilities involve obvious visible actions such as drawing cards, moving objects from zone to zone, or modifying the state of permanents. Note that life totals are considered part of the visible representation of the game — this implies that triggered abilities that cause a player to take damage or gain life first matter at the point that a score pad should be updated.
+                </Annotation>
             </ScrollView>
         )
     }
@@ -45,12 +56,15 @@ export default class Page extends Component {
 const H1 = (props) =>
     <Text style={styles.h1}>{props.children}</Text>;
 
+const Strong = (props) =>
+    <Text style={styles.strong}>{props.children}</Text>;
+
 const P = (props) =>
     <Text style={styles.paragraph}>{props.children}</Text>;
 
 const Annotation = (props) =>
     <View style={styles.annotation}>
-        <Text style={styles.paragraph}>{props.children}</Text>
+        <Text style={[styles.paragraph, {fontStyle: 'italic'}]}>{props.children}</Text>
     </View>;
 
 
@@ -64,6 +78,9 @@ const styles = StyleSheet.create({
     h1: {
         fontSize: 24,
         marginVertical: 5,
+    },
+    strong: {
+        fontWeight: 'bold',
     },
     paragraph: {
         fontSize: 14,
