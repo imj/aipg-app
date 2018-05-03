@@ -54,11 +54,11 @@ const Li = (props) =>
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        paddingHorizontal: 10,
+        paddingHorizontal: 5,
         paddingVertical: 20,
     },
     ul: {
-        paddingLeft: 20,
+        paddingLeft: 10,
     },
     li: {
         fontSize: 16,

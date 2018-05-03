@@ -1,6 +1,156 @@
 // General Philosophy
 
 <P>Judges are neutral arbiters and enforcers of policy and rules.</P>
-<Annotation>This is probably the single most important concept in the document — judges must be neutral. It should be inconceivable that a judge ruled in favor of a player because they are friends or because somehow the judge likes one player more than the other. Being impartial is a fundamental concept in the Magic Judge Code of Conduct. Judges are viewed with respect, in large part, because they are neutral and because they enforce the policy equally.</Annotation>
+
+<Annotation>
+	 <P>This is probably the single most important concept in the document — judges must be neutral. It should be inconceivable that a judge ruled in favor of a player because they are friends or because somehow the judge likes one player more than the other. Being impartial is a fundamental concept in the <ExternalLink to="http://blogs.magicjudges.org/conduct/magic-judge-code/">Magic Judge Code of Conduct</ExternalLink>. Judges are viewed with respect, in large part, because they are neutral and because they enforce the policy equally.
+</P>
+</Annotation>
 
 <P>A judge shouldn’t intervene in a game unless he or she believes a rules violation has occurred, a player with a concern or question requests assistance, or the judge wishes to prevent a situation from escalating.</P>
+
+<Annotation>
+	 <P>Judges are there for the players. Our services are needed when a rule has been violated, a player has some need, or there is a delicate situation like an argument and it’s necessary to calm the players down. When their assistance is not needed, judges should not interfere with matches. That means no comments about game actions, no risk of giving advice, and no disruption of the player’s concentration. Let players play. Keep in mind this doesn’t mean you have to be a robot. You can still chat with players, and joke around with them, just don’t interrupt their games.
+</P>
+</Annotation>
+
+<P>Judges don’t stop play errors from occurring, but instead deal with errors that have occurred, penalize those who violate rules or policy, and promote fair play and sporting conduct by example and diplomacy.</P>
+
+<Annotation>
+	 <P>Like in many other sports, judges don’t prevent mistakes. However, as soon as a game infraction happens, judges step in and apply the necessary corrections and penalties. Players cannot depend on a judge to prevent their illegal actions from occurring, because judges can’t foresee the future and game actions happen quickly. In the vast majority of cases, fixing an infraction after it happens restores the correct flow of the game. This policy also holds when watching a match at the end of round or during a Top 8.</P>
+
+<P><P>It’s also important that judges set a good example of behavior. Your attitude and actions have a pronounced impact on the tone of the event. People should see in you the behavior you want in your events.</P>
+</P>
+
+</Annotation>
+
+<P>Judges may intervene to prevent or preempt errors occurring outside of a game.</P>
+
+<Annotation>
+	 <P>While it’s next to impossible to see that a game infraction is about to happen, sometimes it’s possible to see that an outside-of-game infraction that is about to happen. In these cases, judges should step in and prevent infractions from happening. The “may” in the sentence is not “the judge is allowed to make a choice” but more “The IPG/MTR allows judges to do step in.” This underscores the importance of customer service and makes it very clear that judges do not have the choice of whether to intervene and prevent these types of errors. Outside of a game, judges should always intervene to prevent infractions, but we accept that they sometimes won’t notice that an infraction is about to happen.</P>
+
+<P><P>Here are a few examples:</P>
+</P>
+
+
+<ListItem>A judge sees that a player is shuffling his deck after the end of game one, sees that there is a previously exiled creature on the table, and realizes that the player forgot to return it to his deck; the judge steps in and tell the player that he’s forgetting to shuffle a card.</ListItem>
+<ListItem>In a Sealed Deck tournament, a player gives a decklist to a judge, and the judge notices that the player forgot to write down her basic lands; the judge asks the player to record the basic lands she’s playing.</ListItem>
+<ListItem>Just before the beginning of a round, a player goes to the judge station and hands in a card (like <CardLink card="Pacifism">Pacifism</CardLink>) that belongs to her previous opponent; the judges makes an effort to find where the owner of that card is playing this round, so that they can return it before the game starts with an illegal deck.</ListItem>
+<ListItem>Before the event, a judge sees a questionable card alter. The judge reminds the player that the <ExternalLink to="http://blogs.magicjudges.org/rules/mtr1-7/">Head Judge</ExternalLink> needs to approve all card alters prior to the event.</ListItem>
+
+</Annotation>
+
+<P>Knowledge of a player’s history or skill does not alter an infraction, but it may be taken into account during an investigation.</P>
+
+<Annotation>
+	 <P>We don’t change the infraction based on how good the player is perceived to be. A Game Rule Violation is a Warning regardless of whether the player is new or a grizzled Pro. Once you determine what the infraction was, you apply the penalties without any preconceived biases. A player who has a reputation for being shady has his Game Rule Violations fixed the same way as a Level 3 judge playing in the event. Once the infraction is recognized, who the player is has no bearing. However, in determining what infraction was made, a player’s history may influence the investigation. For example, a new player misunderstanding how trample works is much more believable than an experienced player, with whom you have discussed trample before on multiple occasions. It’s still possible for legitimate errors to be made, but the questions asked in the investigation will be influenced by this knowledge.</P>
+
+</Annotation>
+
+<P>The purpose of a penalty is to educate the player not to make similar mistakes in the future.</P>
+
+<Annotation>
+	 <P>Penalties don’t exist to give sadistic judges the ability to inflict pain on defenseless players. Penalties exist to reduce the chance the error will happen again. A player who receives a penalty for an action is less likely to make the same error in the future. Generally they are meant to be something tangible to reinforce the lesson “I lost a game once for this mistake, and I don’t want to lose another game for something I can easily avoid, I will count to 60 every time I write a decklist”. The primary purpose of a penalty is not tracking; although that is a convenient and useful byproduct, the purpose is education.</P>
+
+</Annotation>
+
+<P>This is done through both an explanation of where the rules or policies were violated and a penalty to reinforce the education.</P>
+
+<Annotation>
+	 <P>So in the sentence above we are stressing the importance of education. A penalty alone can’t do that. You also have to explain (briefly) what the player did wrong. Otherwise, they might not fully understand what went wrong.</P>
+
+</Annotation>
+
+<P>Penalties are also for the deterrence and education of every other player in the event and are also used to track player behavior over time.</P>
+
+<Annotation>
+	 <P>We should also note that you don’t have to receive a penalty to recognize that you don’t want to. If a friend of ours lost an important game because of a penalty, we surely don’t want to lose in the same way. We learn from our friend’s mistakes as well as from our own.</P>
+
+<P><P>There is a (private) archive of all the penalties, just like the (public) archive of all match results. This archive becomes useful in the case of one player committing a high number of the same infraction. If a player receives a Warning for “Looking at Extra Cards — He revealed his opponent’s cards while shuffling his opponent’s deck before the beginning of the match” for twenty times in twenty consecutive tournaments, well, wouldn’t you believe that he’s doing it on purpose and he’s doing it only once just because he knows that “the first time is just a Warning.”?</P>
+</P>
+</Annotation>
+
+<P>If a minor violation is quickly handled by the players to their mutual satisfaction, a judge does not need to intervene.</P>
+
+<Annotation>
+	 <P>Judges should be seen as a benefit to the players, and there are many minor/tiny mistakes that players make and correct themselves over the course of a match without the need for a judge. If the error is tiny, and the players fix it themselves, and are both happy, then the judge does not need to insert themselves into their game.</P>
+</Annotation>
+
+<P>If the players are playing in a way that is clear to both players, but might cause confusion to an external observer, judges are encouraged to request that the players make the situation clear, but not assess an infraction or issue any penalty.</P>
+
+<Annotation>
+	 <P>Players take certain shortcuts, or use beads to represent odd things, or use the wrong tokens for creatures. These things might be clear to them, but not clear to observers (including judges). If the players understand what’s going on, and everything is fine, don’t issue a penalty. Just ask them to play in a way that’s clearer. Often we get spectators coming to us with problems that aren’t really problems. For this reason we must push the players to not only be clear with each other but also to ensure that their actions are clear to anyone who is watching their game.</P>
+</Annotation>
+
+<P>In both these situations, the judge should ensure that the game progresses normally.</P>
+
+<Annotation>
+	 <P>If the players fix a tiny error themselves or are playing in a way that is clear to them, but not clear to bystanders, stick around and watch and make sure nothing odd is happening like a player is taking advantage of the confusion, or the error doesn’t compound itself.</P>
+</Annotation>
+
+<P>More significant violations are addressed by first identifying what infraction applies, then proceeding with the corresponding instructions.</P>
+
+<Annotation>
+	 <P>This sentence pulls double-duty. It’s a reminder that we do infract in cases larger than “tiny” and that we do not start with the penalty and work backwards to the infraction. We identify what actions occurred, what the infraction is, and then determine the penalty. We do not give people Game Losses because their error seems worth a Game Loss.</P>
+</Annotation>
+
+<P>Only the Head Judge is authorized to issue penalties that deviate from these guidelines.</P>
+
+<Annotation>
+	 <P>When there are multiple judges, the Head Judge is the judge in charge of the entire tournament; the only one who has the authority to determine if a specific penalty doesn’t apply well to the current situation. Head Judges are usually the most experienced judges available, and when they decide to deviate it’s usually for a good reason.</P>
+
+</Annotation>
+
+<P>The Head Judge may not deviate from this guide’s procedures except in significant and exceptional circumstances or a situation that has no applicable philosophy for guidance.</P>
+
+<Annotation>
+	 <P>Of course, although the Head Judge has the authority to deviate any time he or she wants, he or she is also expected to know when it is appropriate to deviate. The main reason for deviation is when a specific situation doesn’t fit well in the categories listed in the twenty pages of the IPG. The only case where a deviation is justifiable is when the situation is both significant and exceptional.</P>
+
+</Annotation>
+
+<P>Significant and exceptional circumstances are rare—a table collapses, a booster contains cards from a different set, etc.</P>
+
+<Annotation>
+	 <P>Here you have a couple of examples of “exceptional circumstances”. In these cases, we use common sense and we try to find the “best solution” with the players. Both of the examples above are both significant and exceptional. Make sure your situation is both before you consider deviating.</P>
+</Annotation>
+
+<P>The Rules Enforcement Level, round of the tournament, age or experience-level of the player, desire to educate the player, and certification level of the judge are <Strong>not</Strong> exceptional circumstances.</P>
+
+<Annotation>
+	 <P>Some of these situations might make it seem like it’s OK to deviate, but it’s not. You are to enforce policy regardless of whether it’s the last round, regardless of if the call is at table 1 or table 101. The opponents might be an exceptionally young age, but that age difference is not significant in terms of policy. The player might be new, and not know that rolling a die to determine a winner is prohibited; that player is still going to be disqualified regardless of whether you think it is ‘fair’ or not. And finally, being a Level 3 judge does not bestow upon that judge the right to deviate. In truth, they are held to a stricter standard, as lower level judges are watching and learning from their actions.</P>
+</Annotation>
+
+<P>If another judge feels deviation is appropriate, he or she must consult with the Head Judge.</P>
+
+<Annotation>
+	 <P>Just because the Head Judge is the only one that’s allowed to deviate doesn’t mean a floor judge can’t suggest it to the Head Judge. However, as a floor judge, you must never deviate.</P>
+</Annotation>
+
+<P>Judges are human and make mistakes. When a judge makes a mistake, he or she should acknowledge the mistake, apologize to the players, and fix it if it is not too late.</P>
+
+<Annotation>
+	 <P>Despite all efforts to train Golden Retrievers, we judges are still only human.</P>
+
+<P><P>For now.</P>
+</P>
+
+<P><P>Humans make mistakes. It’s a fact of life. No one can be 100% correct all the time, and it is unrealistic to expect otherwise. However, when you do make a mistake, you need to take ownership of it and fix it if you can. Players cannot be allowed to continue thinking that something a judge incorrectly told them is correct. In all cases though, you need to apologize to the players for your error. Sometimes it’s best to do this right away, sometimes it’s less disruptive to do it after the match is over. But apologize to both players as soon as it is possible, and correct the situation. Players are typically very understanding, even when they were on the receiving end of an incorrect call.</P>
+</P>
+</Annotation>
+
+<P>If a member of the tournament staff gives a player erroneous information that causes them to commit a violation, the Head Judge is authorized to downgrade the penalty.</P>
+
+<Annotation>
+	 <P>We expect players to trust their tournament officials, and players need to be able to act on the instructions/information we provide them. It is unfair to penalize them for trusting the people they are supposed to be able to trust. However, this downgrade decision still rests with the Head Judge. For this clause we need two things; 1) the judge to provide erroneous information and 2) a violation be the direct result from the faulty information.</P>
+</Annotation>
+
+<P>For example, a player asks a judge whether a card is legal for a format and is told yes. When that player’s deck is found to be illegal because of these cards, the Head Judge applies the normal procedure for fixing the decklist, but may downgrade the penalty to a Warning because of the direct error of the judge.</P>
+
+<Annotation>
+	 <P>Other examples might include:</P>
+
+
+<ListItem>Downgrading a Game Rule Violation Warning to no penalty if a judge tells a player that she can <CardLink card="Harm%26%238217%3Bs+Way">Harm’s Way</CardLink> a <CardLink card="Lightning+Bolt">Lightning Bolt</CardLink> cast by her opponent back to the opponent’s planeswalker.</ListItem>
+<ListItem>Downgrading a Deck/Decklist Problem Game Loss to a Warning if a judge has previously told the player that registering “Jace” on his decklist is fine.</ListItem>
+
+</Annotation>

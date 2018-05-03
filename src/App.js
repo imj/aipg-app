@@ -16,8 +16,8 @@ const App = StackNavigator({
     }
 }, {
     navigationOptions: ({navigation}) => ({
-        headerRight:
-            <Button title="Index" onPress={() => navigation.navigate('DrawerOpen')} />,
+        // headerRight:
+            // <Button title="Index" onPress={() => navigation.navigate('DrawerOpen')} />,
         headerBackTitle: null,
     })
 });
