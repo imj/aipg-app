@@ -54,11 +54,11 @@ async function parsePage(page, id) {
     // content = content.split('</div>')
     //     .map(chunk => contentToJsx(chunk + '</div>'))
     //     .join('');
-    content = contentToJsx(content);
+    // content = contentToJsx(content);
 
     console.log('Writing %s', id)
     fs.writeFileSync(
-        `${__dirname}/../contents/${id}`,
+        `${__dirname}/../contents/${id}.html`,
         `// ${title}${"\n\n"}${content}`
     );
 }

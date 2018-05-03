@@ -1,19 +1,47 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, ScrollView, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, Text, ScrollView, TouchableOpacity, WebView, View, Linking } from 'react-native';
 import CardLink from '../Components/CardLink';
 import contents from '../Contents';
+
+const CARD_REGEX = /[^"]+lems-mtg-helper-cardfinder\.php\?find=([^&]+)&[^<]+/;
+const PAGE_LINK = /(?:[\w:\/]+blogs\.magicjudges\.org)?\/rules\/ipg(\d(?:-\d)*)\//;
 
 export default class Page extends Component {
     static navigationOptions = ({ navigation }) => ({
         title: contents[navigation.state.params.id].title,
     });
 
+
+    openCard(card) {
+        this.props.navigation.navigate("CardModal", {card: card});
+    }
+
+    openPage(pageId) {
+        this.props.navigation.navigate('Page', {id: pageId})
+    }
+
+    onMessage = (event) => {
+        const url = event.nativeEvent.data;
+
+        if(CARD_REGEX.test(url)) {
+            const matches = url.match(CARD_REGEX);
+
+            return this.openCard(matches[1]);
+        }
+
+        if(PAGE_LINK.test(url)) {
+            const [, id] = url.match(PAGE_LINK);
+
+            return this.openPage(id.replace('-', '.'));
+        }
+
+        Linking.openURL(url);
+    }
+
     render() {
-        const ContentPage = contents[this.props.navigation.state.params.id].content;
+        const html = contents[this.props.navigation.state.params.id].content;
         return (
-            <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-                <ContentPage />
-            </ScrollView>
+            <WebView onMessage={this.onMessage} style={{flex: 1}} source={{html: html}} />
         );
     }
 }
