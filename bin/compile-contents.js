@@ -21,7 +21,7 @@ const HEADER = `
         font-size: 16px;
         font-size: 1rem;
         line-height: 1.5;
-        margin: 0 15px;
+        margin: 15px;
     }
     a {
         color: royalblue;
@@ -38,7 +38,7 @@ const HEADER = `
 
     .alert {
         padding: 15px;
-        margin-bottom: 1rem;
+        margin: 1rem 0 2rem;
         border: 1px solid transparent;
         border-radius: .25rem;
     }

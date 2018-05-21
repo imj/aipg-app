@@ -48,6 +48,11 @@ async function parsePage(page, id) {
 
     const title = $article.find('h1.entry-title').text()
         .replace(/IPG (\d(?:.\d)*)\.? /, '')
+        .split('—').pop();
+
+
+    $article.find('h2').parent().attr('style', '');
+    $article.find('.alert.alert-warning').parent().attr('style', '');
 
     let content = $article.find('div.entry-content').html();
 

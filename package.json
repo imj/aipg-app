@@ -9,11 +9,13 @@
   },
   "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
   "scripts": {
-    "build-content": "node bin/compile-contents.js",
-    "start": "npm run build-content && react-native-scripts start",
+    "content:fetch": "node bin/sync-en.js",
+    "content:compile": "node bin/compile-contents.js",
+    "content:build": "npm run content:fetch && npm run content:compile",
+    "start": "react-native-scripts start",
     "eject": "react-native-scripts eject",
-    "android": "npm run build-content && react-native-scripts android",
-    "ios": "npm run build-content && react-native-scripts ios",
+    "android": "react-native-scripts android",
+    "ios": "react-native-scripts ios",
     "test": "node node_modules/jest/bin/jest.js --watch"
   },
   "jest": {
