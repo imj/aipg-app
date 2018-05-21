@@ -47,8 +47,7 @@ async function parsePage(page, id) {
     $article.find('.table').remove();
 
     const title = $article.find('h1.entry-title').text()
-        .replace(/IPG (\d(?:.\d)*)\.? /, '')
-        .split('—').pop();
+        .replace(/IPG (\d(?:.\d)*)\.? /, '');
 
 
     $article.find('h2').parent().attr('style', '');

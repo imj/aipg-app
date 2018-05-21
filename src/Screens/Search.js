@@ -49,7 +49,7 @@ export default class Search extends Component {
                     <TextInput
                         value={this.state.search}
                         onChangeText={text => this.setState({search: text})}
-
+                        underlineColorAndroid="transparent"
                         placeholder="Search here"
                         style={styles.inputField} />
                     <SearchButton onPress={this.search} />
@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         borderWidth: 1,
         borderColor: '#888',
-        height: 60,
+        height: 40,
         paddingHorizontal: 10,
         flex: 1,
     },
