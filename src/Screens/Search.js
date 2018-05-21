@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, TextInput, ScrollView, FlatList, TouchableOpacity, Button, View } from 'react-native';
+import SearchButton from '../Components/SearchButton';
 import contents from '../Contents';
 
 const lunr = require('lunr');
@@ -21,8 +22,16 @@ export default class Search extends Component {
     }
 
     search = () => {
+        if(!this.state.search) {
+            this.setState({
+                results: []
+            });
+
+            return;
+        }
         const results = idx.search(this.state.search)
-            .filter(result => result.score > 0.5);
+            .slice(0, 6);
+            // .filter(result => result.score > 0.5);
 
         this.setState({
             results,
@@ -37,8 +46,13 @@ export default class Search extends Component {
         return (
             <View style={{flex: 1, padding: 20}}>
                 <View style={styles.searchContainer}>
-                    <TextInput value={this.state.search} onChangeText={text => this.setState({search: text})} placeholder="Search here" style={styles.inputField} />
-                    <Button title="Go" onPress={this.search} />
+                    <TextInput
+                        value={this.state.search}
+                        onChangeText={text => this.setState({search: text})}
+
+                        placeholder="Search here"
+                        style={styles.inputField} />
+                    <SearchButton onPress={this.search} />
                 </View>
 
                 <FlatList
@@ -48,7 +62,7 @@ export default class Search extends Component {
                     renderItem={({item}) =>
                         <TouchableOpacity onPress={() => navigation.navigate('Page', { id: item.ref })}>
                             <View style={styles.rowItem}>
-                                <Text>{item.ref} {contents[item.ref].title}</Text>
+                                <Text style={styles.resultText}>{item.ref} {contents[item.ref].title}</Text>
                             </View>
                         </TouchableOpacity>
                     }
@@ -72,5 +86,9 @@ const styles = StyleSheet.create({
         height: 60,
         paddingHorizontal: 10,
         flex: 1,
+    },
+    resultText: {
+        marginBottom: 20,
+        fontSize: 14,
     }
 });

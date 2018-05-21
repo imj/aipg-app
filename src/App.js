@@ -5,8 +5,7 @@ import Index from './Screens/Index';
 import Page from './Screens/Page';
 import Search from './Screens/Search';
 import CardModal from './Screens/CardModal';
-import Drawer from './Components/Drawer';
-
+import SearchButton from './Components/SearchButton';
 
 const App = StackNavigator({
     Index: {
@@ -21,8 +20,11 @@ const App = StackNavigator({
 }, {
     navigationOptions: ({navigation}) => ({
         headerRight:
-            <Button title="Search" onPress={() => navigation.navigate('Search')} />,
+            <SearchButton onPress={() => navigation.navigate('Search')} />,
         headerBackTitle: null,
+        headerTitleStyle: {
+            fontSize: 14,
+        }
     })
 });
 
@@ -39,16 +41,7 @@ const ModalNav = StackNavigator({
     },
 });
 
-const MyApp = DrawerNavigator({
-    ModalNav: {
-        screen: ModalNav,
-    },
-}, {
-    drawerPosition: 'right',
-    contentComponent: Drawer,
-});
-
-export default MyApp;
+export default ModalNav;
 
 const styles = StyleSheet.create({
     container: {

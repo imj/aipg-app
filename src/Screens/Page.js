@@ -7,7 +7,10 @@ const PAGE_LINK = /(?:[\w:\/]+blogs\.magicjudges\.org)?\/rules\/ipg(\d(?:-\d)*)\
 
 export default class Page extends Component {
     static navigationOptions = ({ navigation }) => ({
-        title: contents[navigation.state.params.id].title,
+        title: contents[navigation.state.params.id].title
+        .split('—')
+        .pop()
+        .trim(),
     });
 
 
