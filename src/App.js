@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, Button } from 'react-native';
 import { DrawerNavigator, StackNavigator } from 'react-navigation';
 import Index from './Screens/Index';
 import Page from './Screens/Page';
+import Search from './Screens/Search';
 import CardModal from './Screens/CardModal';
 import Drawer from './Components/Drawer';
 
@@ -13,11 +14,14 @@ const App = StackNavigator({
     },
     Page: {
         screen: Page,
+    },
+    Search: {
+        screen: Search,
     }
 }, {
     navigationOptions: ({navigation}) => ({
-        // headerRight:
-            // <Button title="Index" onPress={() => navigation.navigate('DrawerOpen')} />,
+        headerRight:
+            <Button title="Search" onPress={() => navigation.navigate('Search')} />,
         headerBackTitle: null,
     })
 });

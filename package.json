@@ -23,6 +23,7 @@
     "axios": "^0.17.1",
     "cheerio": "^1.0.0-rc.2",
     "expo": "^24.0.2",
+    "lunr": "^2.2.0",
     "react": "^16.0.0",
     "react-native": "^0.51.0",
     "react-navigation": "^1.5.11"
