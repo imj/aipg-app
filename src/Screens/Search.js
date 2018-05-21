@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, TextInput, ScrollView, FlatList, TouchableOpacity, Button, View } from 'react-native';
-import CardLink from '../Components/CardLink';
 import contents from '../Contents';
 
 const lunr = require('lunr');

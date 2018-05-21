@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, ScrollView, TouchableOpacity, WebView, View, Linking } from 'react-native';
-import CardLink from '../Components/CardLink';
 import contents from '../Contents';
 
 const CARD_REGEX = /[^"]+lems-mtg-helper-cardfinder\.php\?find=([^&]+)&[^<]+/;
