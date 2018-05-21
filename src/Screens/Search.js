@@ -1,14 +1,19 @@
-import React, { Component } from 'react';
-import { StyleSheet, Text, TextInput, ScrollView, FlatList, TouchableOpacity, Button, View } from 'react-native';
+import React, {Component} from 'react';
+import {
+    StyleSheet,
+    Text,
+    TextInput,
+    FlatList,
+    TouchableOpacity,
+    View,
+} from 'react-native';
 import SearchButton from '../Components/SearchButton';
 import contents from '../Contents';
 
 const lunr = require('lunr');
 const data = require('../Contents/search-index.json');
 
-const idx = lunr.Index.load(data)
-
-
+const idx = lunr.Index.load(data);
 
 export default class Search extends Component {
     static navigationOptions = {
@@ -19,28 +24,25 @@ export default class Search extends Component {
     state = {
         search: '',
         results: [],
-    }
+    };
 
     search = () => {
-        if(!this.state.search) {
+        if (!this.state.search) {
             this.setState({
-                results: []
+                results: [],
             });
 
             return;
         }
-        const results = idx.search(this.state.search)
-            .slice(0, 6);
-            // .filter(result => result.score > 0.5);
+        const results = idx.search(this.state.search).slice(0, 6);
+        // .filter(result => result.score > 0.5);
 
         this.setState({
             results,
         });
-    }
-
+    };
 
     render() {
-
         const {navigation} = this.props;
 
         return (
@@ -51,7 +53,8 @@ export default class Search extends Component {
                         onChangeText={text => this.setState({search: text})}
                         underlineColorAndroid="transparent"
                         placeholder="Search here"
-                        style={styles.inputField} />
+                        style={styles.inputField}
+                    />
                     <SearchButton onPress={this.search} />
                 </View>
 
@@ -59,14 +62,19 @@ export default class Search extends Component {
                     data={this.state.results}
                     bounces={false}
                     keyExtractor={item => item.ref}
-                    renderItem={({item}) =>
-                        <TouchableOpacity onPress={() => navigation.navigate('Page', { id: item.ref })}>
+                    renderItem={({item}) => (
+                        <TouchableOpacity
+                            onPress={() =>
+                                navigation.navigate('Page', {id: item.ref})
+                            }>
                             <View style={styles.rowItem}>
-                                <Text style={styles.resultText}>{item.ref} {contents[item.ref].title}</Text>
+                                <Text style={styles.resultText}>
+                                    {item.ref} {contents[item.ref].title}
+                                </Text>
                             </View>
                         </TouchableOpacity>
-                    }
-                    />
+                    )}
+                />
             </View>
         );
     }
@@ -90,5 +98,5 @@ const styles = StyleSheet.create({
     resultText: {
         marginBottom: 20,
         fontSize: 14,
-    }
+    },
 });

@@ -1,58 +1,52 @@
-import React, { Component } from 'react';
-import { StyleSheet, Text, ScrollView, TouchableOpacity, WebView, View, Linking } from 'react-native';
+import React, {Component} from 'react';
+import {StyleSheet, WebView, Linking} from 'react-native';
 import contents from '../Contents';
 
 const CARD_REGEX = /[^"]+lems-mtg-helper-cardfinder\.php\?find=([^&]+)&[^<]+/;
 const PAGE_LINK = /(?:[\w:\/]+blogs\.magicjudges\.org)?\/rules\/ipg(\d(?:-\d)*)\//;
 
 export default class Page extends Component {
-    static navigationOptions = ({ navigation }) => ({
+    static navigationOptions = ({navigation}) => ({
         title: contents[navigation.state.params.id].title
-        .split('—')
-        .pop()
-        .trim(),
+            .split('—')
+            .pop()
+            .trim(),
     });
 
-
     openCard(card) {
-        this.props.navigation.navigate("CardModal", {card: card});
+        this.props.navigation.navigate('CardModal', {card: card});
     }
 
     openPage(pageId) {
-        this.props.navigation.navigate('Page', {id: pageId})
+        this.props.navigation.navigate('Page', {id: pageId});
     }
 
-    onMessage = (event) => {
+    onMessage = event => {
         const url = event.nativeEvent.data;
 
-        if(CARD_REGEX.test(url)) {
+        if (CARD_REGEX.test(url)) {
             const matches = url.match(CARD_REGEX);
 
             return this.openCard(matches[1]);
         }
 
-        if(PAGE_LINK.test(url)) {
+        if (PAGE_LINK.test(url)) {
             const [, id] = url.match(PAGE_LINK);
 
             return this.openPage(id.replace('-', '.'));
         }
 
         Linking.openURL(url);
-    }
+    };
 
     render() {
         const html = contents[this.props.navigation.state.params.id].content;
         return (
-            <WebView onMessage={this.onMessage} style={{flex: 1}} source={{html: html}} />
+            <WebView
+                onMessage={this.onMessage}
+                style={{flex: 1}}
+                source={{html: html}}
+            />
         );
     }
 }
-
-const styles = StyleSheet.create({
-    container: {
-        paddingHorizontal: 20,
-    },
-    contentContainer: {
-        paddingVertical: 20,
-    }
-});

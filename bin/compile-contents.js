@@ -96,9 +96,14 @@ const FOOTER = `
 const files = fs.readdirSync(__dirname + '/../contents');
 
 files.forEach(file => {
-    if(file === '.DS_Store') return;
+    if (file === '.DS_Store') {
+        return;
+    }
     const chapter = file.replace('.html', '');
-    const [, title, content] = fs.readFileSync(`${__dirname}/../contents/${file}`).toString().match(REGEX);
+    const [, title, content] = fs
+        .readFileSync(`${__dirname}/../contents/${file}`)
+        .toString()
+        .match(REGEX);
     // const output = babel.transform(`<React.Fragment>${content}</React.Fragment>`, { plugins: ['transform-react-jsx'] });
 
     data += `index["${chapter}"] = {
@@ -110,7 +115,4 @@ files.forEach(file => {
 `;
 });
 
-fs.writeFileSync(
-    `${__dirname}/../src/Contents/index.js`,
-    data
-)
+fs.writeFileSync(`${__dirname}/../src/Contents/index.js`, data);

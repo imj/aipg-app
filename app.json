@@ -1,5 +1,17 @@
 {
   "expo": {
-    "sdkVersion": "24.0.0"
+    "sdkVersion": "24.0.0",
+    "name": "AnnotatedIPG",
+    "slug": "annotated-ipg",
+    "privacy": "unlisted",
+    "description": "Annotated IPG in app.",
+    "version": "v0.1.0",
+    "orientation": "portrait",
+    "ios": {
+      "bundleIdentifier": "net.italianmagicjudges.aipg"
+    },
+    "android": {
+      "package": "net.italianmagicjudges.aipg"
+    }
   }
 }

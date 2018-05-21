@@ -34,24 +34,30 @@ const map = {
     '4.5': 'https://blogs.magicjudges.org/rules/ipg4-5/',
     '4.6': 'https://blogs.magicjudges.org/rules/ipg4-6/',
     '4.7': 'https://blogs.magicjudges.org/rules/ipg4-7/',
-    '4.8': 'https://blogs.magicjudges.org/rules/ipg4-8/'
+    '4.8': 'https://blogs.magicjudges.org/rules/ipg4-8/',
 };
-
 
 async function parsePage(page, id) {
     console.log('Getting %s...', id);
     const response = await axios.get(page);
-    const $ = cheerio.load(response.data, { decodeEntities: false });
+    const $ = cheerio.load(response.data, {decodeEntities: false});
     const $article = $('article');
     $article.find('.page-navigation').remove();
     $article.find('.table').remove();
 
-    const title = $article.find('h1.entry-title').text()
+    const title = $article
+        .find('h1.entry-title')
+        .text()
         .replace(/IPG (\d(?:.\d)*)\.? /, '');
 
-
-    $article.find('h2').parent().attr('style', '');
-    $article.find('.alert.alert-warning').parent().attr('style', '');
+    $article
+        .find('h2')
+        .parent()
+        .attr('style', '');
+    $article
+        .find('.alert.alert-warning')
+        .parent()
+        .attr('style', '');
 
     let content = $article.find('div.entry-content').html();
 
@@ -60,64 +66,53 @@ async function parsePage(page, id) {
     //     .join('');
     // content = contentToJsx(content);
 
-    console.log('Writing %s', id)
+    console.log('Writing %s', id);
     fs.writeFileSync(
         `${__dirname}/../contents/${id}.html`,
-        `// ${title}${"\n\n"}${content}`
+        `// ${title}${'\n\n'}${content}`
     );
 }
-
 
 function contentToJsx(content) {
     // Clear code
     content = content
         .trim()
-        .replace(
-            /<p[^>]*><\/p>/g,
-            ''
-        )
-        .replace(
-            /<br>/g,
-            ''
-        )
+        .replace(/<p[^>]*><\/p>/g, '')
+        .replace(/<br>/g, '');
     // Replace headings
-    content = content.replace(
-        /<h[1-6][^>]*>([^<]+)<\/h[1-6]>/g,
-        '<H1>$1</H1>'
-    );
+    content = content.replace(/<h[1-6][^>]*>([^<]+)<\/h[1-6]>/g, '<H1>$1</H1>');
     // Replace Annotation
     content = content.replace(
         /<div class="alert alert-info" role="alert">((?:(?!<\/div).|\s)+)<\/div>/g,
         '<Annotation>$1</Annotation>'
-    )
+    );
 
     // Replace CardLink
     content = content.replace(
         /<a href="[^"]+lems-mtg-helper-cardfinder\.php\?find=([^&]+)&[^<]+">([^<]+)<\/a>/g,
         '<CardLink card="$1">$2</CardLink>'
-    )
+    );
     // Replace PageLink
     // Anchor which starts with 'blogs.magicjudges.org/rules/ipg(X-Y)
     // Then replace X-Y to X.Y
-    content = content.replace(
-        /<a[^>]+href="(?:[\w:\/]+blogs\.magicjudges\.org)?\/rules\/ipg(\d(?:-\d)*)\/"[^>]*>((?:(?!<\/a>).|\s)+)<\/a>/g,
-        '<PageLink to="$1">$2</PageLink>'
-    ).replace(
-        /<PageLink to="(\d+)-(\d+)"/g,
-        '<PageLink to="$1.$2"'
-    );
+    content = content
+        .replace(
+            /<a[^>]+href="(?:[\w:\/]+blogs\.magicjudges\.org)?\/rules\/ipg(\d(?:-\d)*)\/"[^>]*>((?:(?!<\/a>).|\s)+)<\/a>/g,
+            '<PageLink to="$1">$2</PageLink>'
+        )
+        .replace(/<PageLink to="(\d+)-(\d+)"/g, '<PageLink to="$1.$2"');
     // Replace ExternalLink
     content = content.replace(
         /<a[^>]+href="([^"]+)"[^>]*>((?:(?!<\/a>).)+)<\/a>/g,
         '<ExternalLink to="$1">$2</ExternalLink>'
-    )
+    );
     // Replace ListItem
     content = content
         .replace(/<\/?ul>/g, '')
         .replace(
             /<li><em>((?:(?!<\/em>).|\s)+)<\/em><\/li>/g,
             '<ListItem>$1</ListItem>'
-        )
+        );
 
     // Replace unstiled list item
     content = content
@@ -125,14 +120,13 @@ function contentToJsx(content) {
         .replace(
             /<li[^>]*>((?:(?!<\/li>).|\s)+)<\/li>/g,
             '<ListItem>$1</ListItem>'
-        )
+        );
 
     // Replace h5 card
-    content = content
-        .replace(
-            /<h5[^>]*>\s*<div class="card">\s*<div class="card-header">([^<]+)<\/div><\/div><\/h5>/g,
-            '<H1>$1</H1>'
-        )
+    content = content.replace(
+        /<h5[^>]*>\s*<div class="card">\s*<div class="card-header">([^<]+)<\/div><\/div><\/h5>/g,
+        '<H1>$1</H1>'
+    );
 
     // // Replace <p><em> -> <P>
     // content = content
@@ -145,39 +139,26 @@ function contentToJsx(content) {
     content = content.replace(
         /<p[^>]*>((?:(?!<\/p>).|\s)+)<\/p>/g,
         '<P>$1</P>'
-    )
+    );
 
     // Replace em to P
-     content = content.replace(
+    content = content.replace(
         /<em[^>]*>((?:(?!<\/em>).|\s)+)<\/em>/g,
         '<P>$1</P>'
-    )
+    );
     // Replace strong to Strong
-     content = content.replace(
+    content = content.replace(
         /<strong>([^<+]+)<\/strong>/g,
         '<Strong>$1</Strong>'
-    )
-
+    );
 
     // Strip remaining tags
-    content = content
-        .replace(
-            /<\/?[a-z][^>]*>/g,
-            ''
-        )
-
+    content = content.replace(/<\/?[a-z][^>]*>/g, '');
 
     // try to format
     content = content
-        .replace(
-            /(<Annotation>)/g,
-            "$1\n\t"
-        )
-        .replace(
-            /(<\/(?:Annotation|P)>)/g,
-            "$1\n"
-        )
-
+        .replace(/(<Annotation>)/g, '$1\n\t')
+        .replace(/(<\/(?:Annotation|P)>)/g, '$1\n');
 
     return content;
 }
@@ -192,6 +173,4 @@ function contentToJsx(content) {
 //         );
 //     });
 
-Promise.all(
-    Object.entries(map).map(pair => parsePage(pair[1], pair[0]))
-)
+Promise.all(Object.entries(map).map(pair => parsePage(pair[1], pair[0])));

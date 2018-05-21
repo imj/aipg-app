@@ -1,27 +1,39 @@
-import React, { Component } from 'react';
-import { StyleSheet, Text, ScrollView, View, Image, Dimensions, TouchableHighlight } from 'react-native';
+import React, {Component} from 'react';
+import {
+    StyleSheet,
+    Text,
+    View,
+    Image,
+    Dimensions,
+    TouchableHighlight,
+} from 'react-native';
 
 export default class CardModal extends Component {
-    static navigationOptions = ({ navigation }) => ({
+    static navigationOptions = {
         mode: 'modal',
-        headerMode: 'none'
-    });
+        headerMode: 'none',
+    };
 
     render() {
         const card = this.props.navigation.state.params.card;
 
         return (
             <View style={styles.container}>
-                <TouchableHighlight onPress={() => this.props.navigation.goBack()}>
+                <TouchableHighlight
+                    onPress={() => this.props.navigation.goBack()}>
                     <Text style={{color: 'white'}}>Close</Text>
                 </TouchableHighlight>
 
-                <Image source={{uri: `http://gatherer.wizards.com/Handlers/Image.ashx?size=small&type=card&name=${card}`}} style={styles.image} />
+                <Image
+                    source={{
+                        uri: `http://gatherer.wizards.com/Handlers/Image.ashx?size=small&type=card&name=${card}`,
+                    }}
+                    style={styles.image}
+                />
             </View>
-        )
+        );
     }
 }
-
 
 const styles = StyleSheet.create({
     container: {
@@ -35,5 +47,5 @@ const styles = StyleSheet.create({
         width: Dimensions.get('window').width * 0.8,
         height: Dimensions.get('window').height * 0.8,
         resizeMode: 'contain',
-    }
+    },
 });
