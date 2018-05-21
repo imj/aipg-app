@@ -1,5 +1,5 @@
 {
-  "name": "AnnotatedIPG",
+  "name": "annotated-ipg",
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
@@ -12,9 +12,9 @@
     "eslint-plugin-jsx-a11y": "^5.1.1",
     "eslint-plugin-prettier": "^2.6.0",
     "eslint-plugin-react": "^7.8.2",
-    "jest-expo": "^24.0.0",
+    "jest-expo": "^27.0.0",
     "prettier": "^1.12.1",
-    "react-native-scripts": "1.7.0",
+    "react-native-scripts": "^1.14.0",
     "react-test-renderer": "16.0.0-beta.5"
   },
   "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
@@ -34,10 +34,10 @@
   "dependencies": {
     "axios": "^0.17.1",
     "cheerio": "^1.0.0-rc.2",
-    "expo": "^24.0.2",
+    "expo": "^27.0.0",
     "lunr": "^2.2.0",
-    "react": "^16.0.0",
-    "react-native": "^0.51.0",
+    "react": "^16.3.0",
+    "react-native": "^0.55.2",
     "react-navigation": "^1.5.11"
   }
 }
