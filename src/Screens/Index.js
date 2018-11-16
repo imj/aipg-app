@@ -4,6 +4,7 @@ import {
     Text,
     ScrollView,
     View,
+    Linking,
     TouchableOpacity,
 } from 'react-native';
 
@@ -127,6 +128,20 @@ export default class Index extends Component {
                         <Li navigation={this.props.navigation} id="4.8">
                             4.8. Cheating
                         </Li>
+                    </Ul>
+                </Ul>
+
+                <Ul>
+                    <Text style={styles.li}>Credits</Text>
+                    <Ul>
+                        <TouchableOpacity
+                            onPress={() =>
+                                Linking.openURL(
+                                    'https://blogs.magicjudges.org/rules/annotated-ipg-credits/'
+                                )
+                            }>
+                            <Text style={styles.li}>AIPG Authoring</Text>
+                        </TouchableOpacity>
                     </Ul>
                 </Ul>
             </ScrollView>

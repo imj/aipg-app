@@ -1,14 +1,15 @@
 {
   "expo": {
     "sdkVersion": "27.0.0",
-    "name": "AnnotatedIPG",
+    "name": "MTG AIPG",
     "slug": "annotated-ipg",
     "privacy": "unlisted",
     "description": "Annotated IPG in app.",
     "version": "v0.1.0",
     "orientation": "portrait",
+    "icon": "./appicon.png",
     "ios": {
-      "bundleIdentifier": "net.italianmagicjudges.aipg"
+      "bundleIdentifier": "net.italianmagicjudges.aipg-test"
     },
     "android": {
       "package": "net.italianmagicjudges.aipg"

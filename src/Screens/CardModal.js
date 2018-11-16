@@ -20,7 +20,8 @@ export default class CardModal extends Component {
         return (
             <View style={styles.container}>
                 <TouchableHighlight
-                    onPress={() => this.props.navigation.goBack()}>
+                    onPress={() => this.props.navigation.goBack()}
+                    style={{padding: 20}}>
                     <Text style={{color: 'white'}}>Close</Text>
                 </TouchableHighlight>
 
@@ -41,7 +42,7 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: 'transparent',
+        backgroundColor: 'brown',
     },
     image: {
         width: Dimensions.get('window').width * 0.8,

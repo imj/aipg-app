@@ -50,6 +50,7 @@ export default class Search extends Component {
                 <View style={styles.searchContainer}>
                     <TextInput
                         value={this.state.search}
+                        onSubmitEditing={this.search}
                         onChangeText={text => this.setState({search: text})}
                         underlineColorAndroid="transparent"
                         placeholder="Search here"
