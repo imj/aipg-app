@@ -1,4 +1,5 @@
 import React from 'react';
+import {View, StatusBar} from 'react-native';
 import {StackNavigator} from 'react-navigation';
 import Index from './Screens/Index';
 import Page from './Screens/Page';
@@ -47,4 +48,11 @@ const ModalNav = StackNavigator(
     }
 );
 
-export default ModalNav;
+const AppWrapper = () => (
+    <View style={{flex: 1}}>
+        <StatusBar barStyle="dark-content" />
+        <ModalNav />
+    </View>
+);
+
+export default AppWrapper;
