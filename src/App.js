@@ -1,26 +1,20 @@
 import React from 'react';
 import {View, StatusBar} from 'react-native';
-import {StackNavigator} from 'react-navigation';
+import {createStackNavigator, createAppContainer} from 'react-navigation';
 import Index from './Screens/Index';
 import Page from './Screens/Page';
 import Search from './Screens/Search';
 import CardModal from './Screens/CardModal';
 import SearchButton from './Components/SearchButton';
 
-const App = StackNavigator(
+const App = createStackNavigator(
     {
-        Index: {
-            screen: Index,
-        },
-        Page: {
-            screen: Page,
-        },
-        Search: {
-            screen: Search,
-        },
+        Index: Index,
+        Page: Page,
+        Search: Search,
     },
     {
-        navigationOptions: ({navigation}) => ({
+        defaultNavigationOptions: ({navigation}) => ({
             headerRight: (
                 <SearchButton onPress={() => navigation.navigate('Search')} />
             ),
@@ -32,7 +26,7 @@ const App = StackNavigator(
     }
 );
 
-const ModalNav = StackNavigator(
+const ModalNav = createStackNavigator(
     {
         MainCardNavigator: {screen: App},
         CardModal: {
@@ -48,11 +42,13 @@ const ModalNav = StackNavigator(
     }
 );
 
+const RootContainer = createAppContainer(ModalNav);
+
 const AppWrapper = () => (
-    <View style={{flex: 1}}>
+    <React.Fragment>
         <StatusBar barStyle="dark-content" />
-        <ModalNav />
-    </View>
+        <RootContainer />
+    </React.Fragment>
 );
 
 export default AppWrapper;
