@@ -1,11 +1,11 @@
 {
   "expo": {
-    "sdkVersion": "27.0.0",
+    "sdkVersion": "32.0.0",
     "name": "AIPG",
     "slug": "annotated-ipg",
     "privacy": "unlisted",
     "description": "Annotated IPG",
-    "version": "0.1.0",
+    "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./appicon.png",
     "ios": {
