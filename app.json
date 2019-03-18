@@ -13,7 +13,8 @@
     },
     "android": {
       "package": "net.italianmagicjudges.aipg",
-      "permissions": []
+      "permissions": [],
+      "versionCode": 2
     },
     "githubUrl": "https://github.com/imj/aipg-app"
   }
