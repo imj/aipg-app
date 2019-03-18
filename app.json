@@ -12,7 +12,8 @@
       "bundleIdentifier": "net.italianmagicjudges.aipg"
     },
     "android": {
-      "package": "net.italianmagicjudges.aipg"
+      "package": "net.italianmagicjudges.aipg",
+      "permissions": []
     },
     "githubUrl": "https://github.com/imj/aipg-app"
   }
