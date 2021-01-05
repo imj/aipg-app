@@ -31,7 +31,7 @@
     "preset": "jest-expo"
   },
   "dependencies": {
-    "axios": "^0.17.1",
+    "axios": "^0.21.1",
     "cheerio": "^1.0.0-rc.2",
     "expo": "^32.0.0",
     "lunr": "^2.2.0",
